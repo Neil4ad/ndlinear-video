@@ -45,8 +45,13 @@ class NdLinearBranding:
 
     @staticmethod
     def body_text(text, font_size=None, color=None, **kwargs):
-        if not any(cmd in text for cmd in ["\\", "$", "\\begin"]):
+        # Only apply \textsf if there’s no explicit LaTeX block environment
+        contains_block = any(env in text for env in ["\\begin", "\\end"])
+        already_wrapped = text.strip().startswith(r"\textsf")
+
+        if not contains_block and not already_wrapped:
             text = f"\\textsf{{{text}}}"
+
         return Tex(
             text,
             font_size=font_size or NdLinearBranding.FONT_CONTENT,
