@@ -333,7 +333,7 @@ class Scene01_Introduction(ThreeDScene):
             color=NdLinearBranding.PRIMARY
         )
         
-        tagline[0][16:23].set_color(NdLinearBranding.SECONDARY)
+        tagline[0][16:24].set_color(NdLinearBranding.SECONDARY)
         tagline.to_edge(DOWN, buff=0.5)
         self.add_fixed_in_frame_mobjects(tagline)
         self.play(Write(tagline), run_time=1.5)
