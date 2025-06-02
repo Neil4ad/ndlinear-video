@@ -156,7 +156,7 @@ class Scene01_Introduction(ThreeDScene):
             run_time=1.5
         )
         self.set_camera_orientation(phi=70 * DEGREES, theta=45 * DEGREES)
-        logo = ImageMobject("ensemblelogo.png").scale(0.2)
+        logo = ImageMobject("ensemblelogo.png").scale(0.17)
         logo.to_corner(DR, buff=0.3)
         self.add_fixed_in_frame_mobjects(logo)
         self.play(FadeIn(logo), run_time=1.5)
