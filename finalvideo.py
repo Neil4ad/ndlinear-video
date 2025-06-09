@@ -168,7 +168,7 @@ class Scene01_Introduction(ThreeDScene):
         self.wait(1.5)
 
         question_text = NdLinearBranding.title_text(
-            "So why do AI models keep flattening it?", 
+            "So why do neural networks flatten it?", 
             font_size=NdLinearBranding.FONT_SUBTITLE,
             color=NdLinearBranding.PROBLEM
         )
