@@ -184,7 +184,7 @@ class Scene01_Introduction(ThreeDScene):
             run_time=1
         )
         cube_label = NdLinearBranding.body_text(
-            "3D Tensor", 
+            "n-dimensional tensor", 
             font_size=NdLinearBranding.FONT_LABEL,
             color=NdLinearBranding.TEXT
         )
@@ -944,7 +944,7 @@ class Scene04_NdLinearSolution(Scene):
        ]
 
        # PARAMETER COUNTER - CENTERED
-        param_tracker = ValueTracker(1048576)
+        param_tracker = ValueTracker(1070000)
         param_number = DecimalNumber(param_tracker.get_value(), num_decimal_places=0,
                                     group_with_commas=True, font_size=24, color=WHITE)
         param_number.add_updater(lambda m: m.set_value(param_tracker.get_value()))
@@ -1002,9 +1002,10 @@ class Scene04_NdLinearSolution(Scene):
             color=NdLinearBranding.ACCENT
         )
         
-        code_comparison = VGroup(code_before, code_after).arrange(DOWN, buff=0.4, aligned_edge=LEFT)
+        code_comparison = VGroup(code_before, code_after).arrange(DOWN, buff=0.3, aligned_edge=LEFT)
         code_comparison.next_to(param_group, LEFT, buff=1.0)
         code_comparison.align_to(param_group, UP)  # Align tops
+        code_comparison.shift(UP * 0.3)
         code_bg = SurroundingRectangle(
             code_comparison,
             stroke_color=WHITE,
